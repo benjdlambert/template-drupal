@@ -37,30 +37,7 @@ spec:
           type: "string"
           enum: ["private", "public", "internal"]
         
-        collaborators:
-          title: Collaborators
-          description: Provide users with permissions
-          type: array
-          ui:options:
-            orderable: false
-          items:
-            type: object
-            required:
-            - username
-            - access
-            properties:
-              access:
-                type: string
-                description: The type of access for the user
-                default: push
-                enum:
-                - push
-                - pull
-                - admin
-                - maintain
-              username:
-                type: string
-                description: The username or group  
+      
     - title: Choose a location  
       required:
         - repoUrl
@@ -93,7 +70,6 @@ spec:
         allowedHosts: ['github.com']
         description: 'This is {{ parameters.component_id }}'
         repoUrl: '{{ parameters.repoUrl }}'
-        collaborators: '{{ parameters.collaborators }}'
 
     - id: register
       name: Register
