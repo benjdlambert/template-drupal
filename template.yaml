@@ -79,7 +79,7 @@ spec:
       input:
         url: ./skeleton
         copyWithoutRender:
-         - ./web/**
+         - '**/web/**'
         values:
           component_id: '{{ parameters.component_id }}'
           description: '{{ parameters.description }}'
